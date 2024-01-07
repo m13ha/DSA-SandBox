@@ -1,0 +1,15 @@
+@import "./variables";
+
+.canvasContainer {
+    width: 62%;
+    min-width: 25rem;
+    height: 100%;
+   // background-color: $dark;
+    border-right: 1em solid red;
+}
+
+.canvas {
+    @include fit-parent;
+    height: 550px;
+    background-color: $dark;
+}

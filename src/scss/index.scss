@@ -1,0 +1,21 @@
+@import "./variables";
+@import "./navbar";
+@import "./canvas";
+
+
+
+*,
+html
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+html,
+#root,
+body {
+    @include fit-parent;
+    display: flex;
+}
