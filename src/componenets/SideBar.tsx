@@ -24,7 +24,7 @@ const SideBar: React.FunctionComponent<ISideBarProps> = () => {
 
   return (
     <>
-      <div>
+      <div className='sideBar'>
         <p>{sideBarText}</p>
         <a href={sideBarLink} target='_'>Learn More</a>
       </div>
