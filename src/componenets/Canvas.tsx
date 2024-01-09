@@ -4,12 +4,24 @@ import { Outlet } from "react-router-dom";
 
 
 interface ICanvasProps {
+    navState: boolean;
+    setNavBarState: Function;
 }
 
-const Canvas: React.FunctionComponent<ICanvasProps> = (props) => {
+const Canvas: React.FunctionComponent<ICanvasProps> = ({ navState, setNavBarState }) => {
+
+    const changeNavDisplayState = (e: any) => {
+        setNavBarState(true)
+    }
+
     return (
         <>
             <div className='canvasContainer'>
+                {!navState && 
+                <span className="material-symbols-outlined" onClick={changeNavDisplayState}>
+                    Menu
+                </span>
+                }
                 <Stage className='canvas'>
                     <Layer>
 

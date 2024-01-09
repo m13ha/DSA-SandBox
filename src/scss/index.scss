@@ -12,6 +12,7 @@ html
     padding: 0px;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    font-family: 'Ubuntu Mono', monospace;
 }
 
 html,
@@ -19,4 +20,6 @@ html,
 body {
     @include fit-parent;
     display: flex;
+    flex-wrap: nowrap;
 }
+

@@ -1,4 +1,10 @@
 {
+    
+    "/" : {
+        "text" : "A stack is a fundamental data structure that follows the Last In, First Out (LIFO) principle, resembling a stack of plates or books. It's a collection of elements with two primary operations: push and pop. Let's delve into the mechanics of how a stack works. A stack is typically implemented using an array or a linked list. Each element in the stack is referred to as a node. The top of the stack is the last element added, and the bottom is the first element added. The stack has a fixed capacity in the case of an array-based implementation, while a linked list-based implementation can dynamically adjust to the required size.",
+        "link" : "https://m13ha.hashnode.dev/data-structures-stacks-and-queues-i"
+
+    },
     "/stacks" : {
         "text" : "A stack is a fundamental data structure that follows the Last In, First Out (LIFO) principle, resembling a stack of plates or books. It's a collection of elements with two primary operations: push and pop. Let's delve into the mechanics of how a stack works. A stack is typically implemented using an array or a linked list. Each element in the stack is referred to as a node. The top of the stack is the last element added, and the bottom is the first element added. The stack has a fixed capacity in the case of an array-based implementation, while a linked list-based implementation can dynamically adjust to the required size.",
         "link" : "https://m13ha.hashnode.dev/data-structures-stacks-and-queues-i"
