@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { json, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import sideBarInfo from "../assets/sideBarInfo.json"
 
 interface ISideBarProps {

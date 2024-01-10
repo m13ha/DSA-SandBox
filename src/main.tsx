@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         element: <Graphs/>,
       },
       {
-        path: "hashtables",
+        path: "/hashtables",
         element: <HashTables/>,
       },
     ],

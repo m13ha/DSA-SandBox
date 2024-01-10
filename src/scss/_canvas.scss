@@ -4,16 +4,38 @@
     width: 80%;
     min-width: 64%;
     height: 100%;
-    border-right: 1em solid red;
-    padding: .8em;
+    padding: 1em;
+
+    -webkit-box-shadow: 3px -8px 13px -1px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 3px -8px 13px -1px rgba(0, 0, 0, 0.24);
+    box-shadow: 3px -8px 13px -1px rgba(0, 0, 0, 0.24);
 
     span {
+        width: 30%;
         position: absolute;
-        font-size: 2em
+        font-size: 2em;
+        cursor: pointer;
     }
-}
 
-.canvas {
-    @include fit-parent;
-    height: 550px;
+    .canvas {
+        width: 90%;
+        background-color: aqua;
+        margin: auto;
+        height: 30em;
+    }
+
+    .zoomBtns {
+        height: 5em;
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: end;
+
+        button {
+            width: 3em;
+            height: 1.5em;
+            text-align: center;
+            margin: .1em;
+        }
+    }
 }

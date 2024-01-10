@@ -16,12 +16,13 @@
 
         li:first-child {
             border: 0px;
-            text-align: right;
+            padding: .4em;
 
             &:hover {
                 color: $dark;
                 background-color: $light;
                 border-bottom: 0px;
+                cursor: pointer;
             }
 
             .material-symbols-outlined {
@@ -33,16 +34,21 @@
             }
 
             span {
-                font-size: 1.2em;
+                font-size: 1.5em;
+                @include fit-parent;
+                display: flex;
+                color: inherit;
+                text-decoration: none;
+                align-items: center;
+                justify-content: end;
             }
-        }
 
+        }
 
         li {
             font-size: 1.5em;
-            height: 2em;
+            height: 3em;
             width: 100%;
-            padding: 0.5em;
             text-align: center;
             font-weight: bold;
 
@@ -55,8 +61,18 @@
 
             a {
                 @include fit-parent;
+                display: flex;
                 color: inherit;
                 text-decoration: none;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &.active {
+                color: $light;
+                background-color: $dark;
+                border-bottom: 0px;
             }
 
         }
