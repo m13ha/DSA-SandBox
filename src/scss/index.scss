@@ -13,7 +13,17 @@ html
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     font-family: 'Ubuntu Mono', monospace;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
 }
+
+
+*::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
 
 html,
 #root,

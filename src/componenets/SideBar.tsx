@@ -1,40 +1,47 @@
 import * as React from 'react';
 import { useLocation } from 'react-router-dom';
 import sideBarInfo from "../assets/sideBarInfo.json"
+import parse from 'html-react-parser/lib/index';
 
 interface ISideBarProps {
 }
 
 const SideBar: React.FunctionComponent<ISideBarProps> = () => {
   let location = useLocation();
+  const [codeVisibilty, setCodeVibility] = React.useState(false)
+
+  // GET THE EXPLANATION AND CODE OF CURRENT ROUTE
   const [sideBarText, setSideBarText] = React.useState(() => {
-    console.log()
     return sideBarInfo[location.pathname as keyof typeof sideBarInfo]?.text || ""
   })
-  const [sideBarLink, setSideBarLink] = React.useState(() => {
-    return sideBarInfo[location.pathname as keyof typeof sideBarInfo]?.link || ""
+  const [sideBarCode, setSideBarCode] = React.useState(() => {
+    return sideBarInfo[location.pathname as keyof typeof sideBarInfo]?.code || ""
   })
-  const [sideBarCode, setSideBarCode] = React.useState("")
 
-
+  // CHANGE EXPLANATION AND CODE ON ROUTE CHANGE
   React.useEffect(() => {
     setSideBarText(sideBarInfo[location.pathname as keyof typeof sideBarInfo].text || "")
-    setSideBarLink(sideBarInfo[location.pathname as keyof typeof sideBarInfo].link || "")
+    setSideBarCode(sideBarInfo[location.pathname as keyof typeof sideBarInfo].code || "")
   }, [location]);
 
+
+  const changeSideContent = () => {
+    if (codeVisibilty) setCodeVibility(false);
+    else setCodeVibility(true)
+  }
 
   return (
     <>
       <div className='sideBar'>
-        <p>{sideBarText}</p>
-        <a href={sideBarLink} target='_'>Learn More</a>
-        <div>
-          <p>{sideBarCode}</p>
-        </div>
-        <div>
-          <button>code</button>
-          <button>How it works</button>
-        </div>
+        {!codeVisibilty &&
+          <><div className='explanation'>{parse(sideBarText)}
+            {/* //<a href={sideBarLink} target='_'>Learn More</a> */}
+          </div>
+          </>
+        }
+        {codeVisibilty && <div>{parse(sideBarCode)}</div>}
+        {!codeVisibilty && <button onClick={changeSideContent}>Code</button>}
+        {codeVisibilty && <button onClick={changeSideContent}>Explanation</button>}
       </div>
     </>
   );
