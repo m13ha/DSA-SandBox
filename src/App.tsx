@@ -4,13 +4,14 @@ import NavBar from "./componenets/Navbar"
 import SideBar from "./componenets/SideBar"
 
 function App() {
-  const [navBarState, setNavBarState] = useState(false)
+  const [navBarState, setNavBarState] = useState(false);
+  const [sideBarState, setSideBarState] = useState(false);
 
   return (
     <>
      <NavBar state={navBarState} setState={setNavBarState}/>
-     <Canvas navState={navBarState} setNavBarState={setNavBarState}></Canvas>
-     <SideBar></SideBar>
+     <Canvas navState={navBarState} setNavBarState={setNavBarState} sideBarState={sideBarState} setSideBarState={setSideBarState}></Canvas>
+     <SideBar sideState={sideBarState}></SideBar>
     </>
   )
 }

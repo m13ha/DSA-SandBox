@@ -1,0 +1,45 @@
+@import "./variables";
+
+.controls {
+    width: 40%;
+    min-width: 30em;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    //margin: auto;
+
+    input {
+        width: 100%;
+        min-width: 20em;
+        height: 2.2em;
+        border: 2px solid $dark;
+        padding: .3em;
+        margin: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+    button {
+        width: 6%;
+        min-width: 3.3em;
+        height: 2em;
+        font-weight: bold;
+        font-size: 1em;
+        margin: .4em;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $dark;
+            color: $light;
+        }
+    }
+
+}

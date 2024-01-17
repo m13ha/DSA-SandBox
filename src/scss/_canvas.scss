@@ -1,41 +1,63 @@
 @import "./variables";
 
 .canvasContainer {
-    width: 80%;
+    width: 100%;
     min-width: 64%;
     height: 100%;
     padding: 1em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    
 
     -webkit-box-shadow: 3px -8px 13px -1px rgba(0, 0, 0, 0.24);
     -moz-box-shadow: 3px -8px 13px -1px rgba(0, 0, 0, 0.24);
     box-shadow: 3px -8px 13px -1px rgba(0, 0, 0, 0.24);
 
-    span {
-        width: 30%;
+    .menu {
+        left: 10px;
+        width: 1.3em;
         position: absolute;
         font-size: 2em;
         cursor: pointer;
     }
 
+    .sideBarBtn {
+        width: 1.3em;
+        right: 0px;
+        position: absolute;
+        font-size: 2em;
+        cursor: pointer;
+        border: 2px solid $dark;
+        border-right: 0px;
+        border-top-left-radius: 40%;
+        border-bottom-left-radius: 40%;
+        text-align: center;
+    }
+
     .canvas {
-        width: 90%;
-        background-color: aqua;
-        margin: auto;
+        width: 80%;
+        //margin: auto;
         height: 30em;
+        border: 1px solid $dark;
     }
 
     .zoomBtns {
-        height: 5em;
-        width: 90%;
-        margin: auto;
+        height: 2em;
+        width: 80%;
+        //margin: auto;
         display: flex;
         justify-content: end;
 
         button {
             width: 3em;
-            height: 1.5em;
+            height: 2em;
             text-align: center;
             margin: .1em;
+            margin-top: .2em;
         }
     }
 }

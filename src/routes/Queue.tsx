@@ -7,9 +7,11 @@ const QueueControls: React.FunctionComponent<IQueueControlsProps> = (props) => {
     return (
         <>
             <div>
-                <input type="text" />
+                <h1>In Development</h1>
+                {/* <input type="text" />
                 <button>Enqueue</button>
                 <button>Dequeue</button>
+                <button>Clear</button> */}
             </div>
         </>
     );

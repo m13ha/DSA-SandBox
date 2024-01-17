@@ -4,9 +4,10 @@ import sideBarInfo from "../assets/sideBarInfo.json"
 import parse from 'html-react-parser/lib/index';
 
 interface ISideBarProps {
+  sideState: boolean;
 }
 
-const SideBar: React.FunctionComponent<ISideBarProps> = () => {
+const SideBar: React.FunctionComponent<ISideBarProps> = ({sideState}) => {
   let location = useLocation();
   const [codeVisibilty, setCodeVibility] = React.useState(false)
 
@@ -32,17 +33,19 @@ const SideBar: React.FunctionComponent<ISideBarProps> = () => {
 
   return (
     <>
-      <div className='sideBar'>
-        {!codeVisibilty &&
-          <><div className='explanation'>{parse(sideBarText)}
-            {/* //<a href={sideBarLink} target='_'>Learn More</a> */}
-          </div>
-          </>
+      {sideState &&
+        <div className='sideBar'>
+          {!codeVisibilty &&
+            <>
+              <div className='explanation'>{parse(sideBarText)}
+              </div>
+            </>
+          }
+          {codeVisibilty && <div>{parse(sideBarCode)}</div>}
+          {!codeVisibilty && <button onClick={changeSideContent}>Code</button>}
+          {codeVisibilty && <button onClick={changeSideContent}>Explanation</button>}
+        </div>
         }
-        {codeVisibilty && <div>{parse(sideBarCode)}</div>}
-        {!codeVisibilty && <button onClick={changeSideContent}>Code</button>}
-        {codeVisibilty && <button onClick={changeSideContent}>Explanation</button>}
-      </div>
     </>
   );
 };
