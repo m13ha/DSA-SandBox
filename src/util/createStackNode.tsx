@@ -28,8 +28,8 @@ class StackNode {
         this.height = height;
         this.width = width;
         this.value = value;
-        this.id= id;
-        this.id2= id2;
+        this.id = id;
+        this.id2 = id2;
     }
 }
 
@@ -37,36 +37,46 @@ class Stack {
     value: StacksArray;
     size: number;
     head: StackNode;
-    push: Function;
-    update: Function
+    // push: Function;
+    // update: Function
 
-    constructor() {
-        this.value = [];
-        this.size = this.value.length;
+    constructor(value: StacksArray, size: number) {
+        this.value = value;
+        this.size = size;
+        this.head = this.value[this.size - 1];
+    }
+
+
+    pushNode(value: string, size: number) {
+        this.moveStackDown()
+        let posY, posX, height, width, id, id2;
+        if (this.size > 0) {
+            posY = this.head.posY - 20;
+            posX = this.head.posX;
+            height = this.head.height;
+            width = this.head.width;
+        } else {
+            posY = 200 - 25;
+            posX = (size - 120) / 2;
+            height = 55;
+            width = 120;
+        }
+        id = uuidv4()
+        id2 = uuidv4()
+        let newStackNode = new StackNode(posX, posY, height, width, value, id, id2);
+        this.value.push(newStackNode);
+        this.size++
+        this.updateStack()
+    };
+
+    updateStack() {
         this.head = this.value[this.size];
-        this.push = (value: string, size: number) => {
-            let posY, posX, height, width, id, id2;
-            if (this.size > 0) {
-                posY = this.head.posY - 20;
-                posX = this.head.posX;
-                height = this.head.height;
-                width = this.head.width;
-            } else {
-                posY = 380;
-                posX = (size - 25) / 2;
-                height = 10;
-                width = 25;
-            }
-            id = uuidv4()
-            id2 = uuidv4()
-            let newStackNode = new StackNode(posX, posY, height, width, value, id, id2);
-            this.value.push(newStackNode);
-            this.update()
-        };
-        this.update = () => {
-            this.head = this.value[this.size];
-        };
+    };
 
+    moveStackDown(){
+        this.value.forEach((obj) => {
+            obj.posY = obj.posY + 20
+        })
     }
 }
 

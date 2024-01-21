@@ -11,7 +11,7 @@ interface StackContextProviderProps {
 }
 
 const defaultValue: StackContextType = {
-  stack: new Stack(),
+  stack: new Stack([], 0),
   setStackValue: () =>{},
 };
 
