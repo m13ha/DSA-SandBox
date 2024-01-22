@@ -4,6 +4,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import "../scss/_btnStyles.scss"
 import { CanvasWidthContext } from '../contexts/CanvaWidth';
 import StackRenderLogic from './StackRenderLogic';
+import QueueRenderLogic from './QueueRenderLogic';
 
 interface ICanvasProps {
     navState: boolean;
@@ -106,6 +107,7 @@ const Canvas: React.FunctionComponent<ICanvasProps> = ({ navState, setNavBarStat
                                 scaleX={scale} scaleY={scale}
                             >
                                 {(location.pathname === "/stacks") && <StackRenderLogic></StackRenderLogic>}
+                                {(location.pathname === "/queues") && <QueueRenderLogic></QueueRenderLogic>}
                             </Layer>
                         </Stage>
                     )}
