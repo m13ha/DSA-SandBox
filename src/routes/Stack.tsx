@@ -20,7 +20,6 @@ const StackControls: React.FunctionComponent<IStackControlsProps> = (props) => {
     }
 
     const push = () => {
-        console.log("clicked");
         if (inputValue.length > 0) {
             let newStack = new Stack(stack.value, stack.size,); // Create a new copy of the stack
             newStack.pushNode(inputValue, canvasWidth);
@@ -30,13 +29,29 @@ const StackControls: React.FunctionComponent<IStackControlsProps> = (props) => {
         setInputRefFocus();
     };
 
+    const pop = () => {
+        let newStack = new Stack(stack.value, stack.size,); // Create a new copy of the stack
+        newStack.popNode()
+        setStackValue(newStack); // Update the state with the new copy
+        setInputValue("")
+        setInputRefFocus();
+    };
+
+    const clear = () => {
+        let newStack = new Stack(stack.value, stack.size,); // Create a new copy of the stack
+        newStack.clearStack()
+        setStackValue(newStack); // Update the state with the new copy
+        setInputValue("")
+        setInputRefFocus();
+    }
+
 
     return (
         <>
             <input type="text" onChange={getValue} value={inputValue} maxLength={3} ref={inputRef} />
             <button onClick={push}>Push</button>
-            <button>Pop</button>
-            <button>Clear</button>
+            <button onClick={pop}>Pop</button>
+            <button onClick={clear}>Clear</button>
         </>
     );
 };

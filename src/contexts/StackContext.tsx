@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useState, Dispatch, SetStateAction } from 'react';
+import React, { createContext, ReactNode, useState, Dispatch, SetStateAction, useEffect } from 'react';
 import { Stack } from '../util/createStackNode';
 
 interface StackContextType {
@@ -19,7 +19,6 @@ const StackContext = createContext<StackContextType>(defaultValue);
 
 const StackContextProvider: React.FC<StackContextProviderProps> = ({ children }) => {
   const [stack, setStackValue] = useState<Stack>(defaultValue.stack);
-
 
   return (
     <StackContext.Provider value={{ stack, setStackValue }}>

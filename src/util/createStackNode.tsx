@@ -66,16 +66,33 @@ class Stack {
         let newStackNode = new StackNode(posX, posY, height, width, value, id, id2);
         this.value.push(newStackNode);
         this.size++
-        this.updateStack()
+        this.head = this.value[this.size - 1];
     };
 
-    updateStack() {
-        this.head = this.value[this.size];
-    };
+    popNode() {
+        if (this.size > 0) {
+            this.value.pop();
+            this.size--
+            this.head = this.value[this.size - 1];
+            this.moveStackUp()
+        }
+    }
 
-    moveStackDown(){
+    clearStack() {
+        this.value = [];
+        this.size = 0
+        this.head = this.value[this.size - 1];
+    }
+
+    moveStackDown() {
         this.value.forEach((obj) => {
             obj.posY = obj.posY + 20
+        })
+    }
+
+    moveStackUp() {
+        this.value.forEach((obj) => {
+            obj.posY = obj.posY - 20
         })
     }
 }
