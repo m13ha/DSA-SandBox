@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Stage, Layer, Text } from 'react-konva';
+import { Stage, Layer} from 'react-konva';
 import { Outlet, useLocation } from "react-router-dom";
 import "../scss/_btnStyles.scss"
 import { CanvasWidthContext } from '../contexts/CanvaWidth';
@@ -19,11 +19,6 @@ const Canvas: React.FunctionComponent<ICanvasProps> = ({ navState, setNavBarStat
     const layerRef = React.useRef<any>(null);
     const location = useLocation();
     const [scale, setScale] = React.useState(1);
-
-    React.useEffect(() => {
-        //console.log(stageRef, location, layerRef)
-        //layerRef.current.clear()
-    }, [location])
 
     React.useEffect(() => {
         window.addEventListener("resize", updateCanvasDimension);

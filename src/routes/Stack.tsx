@@ -8,7 +8,7 @@ import useFocus from '../custom hooks/UseFocus';
 interface IStackControlsProps {
 }
 
-const StackControls: React.FunctionComponent<IStackControlsProps> = (props) => {
+const StackControls: React.FunctionComponent<IStackControlsProps> = () => {
     const { stack, setStackValue } = React.useContext(StackContext)
     const { canvasWidth } = React.useContext(CanvasWidthContext)
     const [inputValue, setInputValue] = React.useState<string>("")

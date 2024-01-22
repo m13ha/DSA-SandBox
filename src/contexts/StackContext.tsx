@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useState, Dispatch, SetStateAction, useEffect } from 'react';
+import React, { createContext, ReactNode, useState, Dispatch, SetStateAction } from 'react';
 import { Stack } from '../util/createStackNode';
 
 interface StackContextType {
