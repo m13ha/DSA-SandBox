@@ -1,5 +1,3 @@
-@import "./variables";
-
 .canvasContainer {
     width: 100%;
     min-width: 64%;
@@ -10,8 +8,8 @@
     justify-content: center;
     flex-wrap: wrap;
     align-content: flex-start;
-
-    
+    overflow: hidden;
+    /* Enable scrolling */
 
     -webkit-box-shadow: 3px -8px 13px -1px rgba(0, 0, 0, 0.24);
     -moz-box-shadow: 3px -8px 13px -1px rgba(0, 0, 0, 0.24);
@@ -39,16 +37,22 @@
     }
 
     .canvas {
-        width: 70%;
-        //margin: auto;
+        width: 80%;
         height: 500px;
         border-bottom: 1.5px solid $dark;
+        overflow: auto;
     }
+
+    label {
+        display: block;
+        width: 80%;
+        text-align: center;
+    }
+
 
     .zoomBtns {
         height: 2em;
         width: 70%;
-        //margin: auto;
         display: flex;
         justify-content: end;
 
@@ -56,8 +60,8 @@
             width: 3em;
             height: 2em;
             text-align: center;
-            margin: .1em;
-            margin-top: .2em;
+            margin: 0.1em;
+            margin-top: 0.2em;
         }
     }
 }

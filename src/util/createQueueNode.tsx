@@ -86,13 +86,13 @@ class Queue {
 
     moveQueueRight() {
         this.value.forEach((obj) => {
-            obj.posX = obj.posX - 120
+            obj.posX = obj.posX - 130
         })
     }
 
     moveQueueLeft() {
         this.value.forEach((obj) => {
-            obj.posX = obj.posX - 120
+            obj.posX = obj.posX - 130
         })
     }
 }

@@ -69,18 +69,18 @@ const NavBar: React.FunctionComponent<INavBarProps> = ({ state, setState }) => {
             <li className={activeTab['/queues']} onClick={showActiveTab}>
               <Link to={"/queues"}>Queues</Link>
             </li>
-            <li className={activeTab['/lists']} onClick={showActiveTab}>
+            {/* <li className={activeTab['/lists']} onClick={showActiveTab}>
               <Link to={"/lists"}>Lists</Link>
-            </li>
+            </li> */}
             <li className={activeTab['/trees']} onClick={showActiveTab}>
-              <Link to={"/trees"}>Trees</Link>
+              <Link to={"/trees"}>Trees(BST)</Link>
             </li>
             <li className={activeTab['/graphs']} onClick={showActiveTab}>
               <Link to={"/graphs"}>Graphs</Link>
             </li>
-            <li className={activeTab['/hashtables']} onClick={showActiveTab}>
+            {/* <li className={activeTab['/hashtables']} onClick={showActiveTab}>
               <Link to={"/hashtables"}>HashTables</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
 
