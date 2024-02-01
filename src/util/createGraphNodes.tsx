@@ -26,7 +26,7 @@ class GraphNode {
     }
 }
 
-class Vertice {
+class Edge {
     posX1: number;
     posY1: number;
     posX2: number;
@@ -46,7 +46,7 @@ class Vertice {
 
 class Graph {
     nodes: Map<string, GraphNode>;
-    edge: Map<string, Vertice>;
+    edge: Map<string, Edge>;
     size: number;
     axis: Array<number>
     links: number
@@ -85,9 +85,6 @@ class Graph {
 
 
 
-    deleteNode(value: number) {
-    }
-
     highlight(node: GraphNode, color: string) {
         node.ref.to({
             stroke: color ? color : "black",
@@ -100,4 +97,4 @@ class Graph {
 }
 
 
-export { Graph, GraphNode, Vertice };
+export { Graph, GraphNode, Edge };

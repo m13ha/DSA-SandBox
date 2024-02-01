@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { GraphContext } from '../contexts/GraphContext';
 import { Circle, Text, Arrow } from 'react-konva';
-import { Graph, GraphNode, Vertice } from '../util/createGraphNodes';
-import { render } from 'react-dom';
+import {  Edge } from '../util/createGraphNodes';
 
 interface IGraphRenderLogicProps {
 }
@@ -44,8 +43,6 @@ const GraphRenderLogic: React.FunctionComponent<IGraphRenderLogicProps> = () => 
     const handleDragEnd = (e: any) => {
         // Retrieve the initial position from the target nodeect
         const target = e.target;
-        const initialPosition = e.target.getAttr('initialPosition');
-
         const textElement = hash.current.get(target.name())
         reRenderLinks(e.target.attrs.id);
 
@@ -90,7 +87,7 @@ const GraphRenderLogic: React.FunctionComponent<IGraphRenderLogicProps> = () => 
     }
 
     const renderLines = (line: any, count: number) => {
-        let graphLine: Vertice = line.next().value;
+        let graphLine: Edge = line.next().value;
         let counts = count;
         if (counts > 0 && graphLine !== undefined) {
             return (

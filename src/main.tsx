@@ -9,10 +9,9 @@ import "./scss/index.scss"
 import Error from './routes/Error.tsx';
 import StackControls from './routes/Stack.tsx';
 import QueueControls from './routes/Queue.tsx';
-import ListControls from './routes/LinkedList.tsx';
 import Tree from './routes/Trees.tsx';
 import Graphs from './routes/Graphs.tsx';
-import HashTables from './routes/HashTables.tsx';
+
 
 const router = createBrowserRouter([
   {
@@ -32,10 +31,10 @@ const router = createBrowserRouter([
         path: "/queues",
         element: <QueueControls/>,
       },
-      {
-        path: "/lists",
-        element: <ListControls/>,
-      },
+      // {
+      //   path: "/lists",
+      //   element: <ListControls/>,
+      // },
       {
         path: "/trees",
         element: <Tree/>,
@@ -44,10 +43,10 @@ const router = createBrowserRouter([
         path: "/graphs",
         element: <Graphs/>,
       },
-      {
-        path: "/hashtables",
-        element: <HashTables/>,
-      },
+      // {
+      //   path: "/hashtables",
+      //   element: <HashTables/>,
+      // },
     ],
 
   },

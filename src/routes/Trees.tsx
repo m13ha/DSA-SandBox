@@ -7,7 +7,7 @@ import { TreeBST } from '../util/createTreeNode';
 interface ITreeProps {
 }
 
-const Tree: React.FunctionComponent<ITreeProps> = (props) => {
+const Tree: React.FunctionComponent<ITreeProps> = () => {
     const { treeBST, setTreeBSTValue } = React.useContext(TreeBSTContext)
     const [inputValue, setInputValue] = React.useState<number>(0)
     const [inputRef, setInputRefFocus] = useFocus()

@@ -4,7 +4,7 @@ import { useRouteError } from "react-router-dom";
 interface IErrorProps {
 }
 
-const Error: React.FunctionComponent<IErrorProps> = (props) => {
+const Error: React.FunctionComponent<IErrorProps> = () => {
    const error: any = useRouteError();
    console.error(error);
 

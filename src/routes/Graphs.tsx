@@ -1,12 +1,12 @@
 import * as React from 'react';
 import useFocus from '../custom hooks/UseFocus';
-import { Graph, Vertice } from '../util/createGraphNodes';
+import { Graph, Edge } from '../util/createGraphNodes';
 import { GraphContext } from '../contexts/GraphContext';
 
 interface IGraphsProps {
 }
 
-const Graphs: React.FunctionComponent<IGraphsProps> = (props) => {
+const Graphs: React.FunctionComponent<IGraphsProps> = () => {
     const [inputValue, setInputValue] = React.useState("")
     const [inputValue2, setInputValue2] = React.useState("")
     const [inputValue3, setInputValue3] = React.useState("")
@@ -63,17 +63,17 @@ const Graphs: React.FunctionComponent<IGraphsProps> = (props) => {
     //     }
     // }
 
-    const addVertice = () => {
+    const addEdge = () => {
         setStatus((prevState: boolean) => {
             return !prevState
         });
     }
 
-    const createVertice = () => {
+    const createEdge = () => {
         let node1 = graph.nodes.get(inputValue2)
         let node2 = graph.nodes.get(inputValue3)
         if (node1 && node2) {
-            const vert = new Vertice(node1.ref.attrs.x, node1.ref.attrs.y, node2.ref.attrs.x, node2.ref.attrs.y);
+            const vert = new Edge(node1.ref.attrs.x, node1.ref.attrs.y, node2.ref.attrs.x, node2.ref.attrs.y);
             let newGraph = new Graph();
             newGraph.nodes = new Map(graph.nodes); // Copy nodes using Map constructor
 
@@ -119,7 +119,7 @@ const Graphs: React.FunctionComponent<IGraphsProps> = (props) => {
                     <label htmlFor="input">Enter a value</label>
                     <input id="input" type="text" onChange={(e) => { setInputValue(e.target.value) }} value={inputValue} minLength={1} maxLength={5} ref={inputRef} />
                     <button onClick={addNode}>Add Node</button>
-                    <button onClick={addVertice}>Add Edge</button>
+                    <button onClick={addEdge}>Add Edge</button>
                     <button onClick={clear}>Clear</button>
                 </>
             }
@@ -128,8 +128,8 @@ const Graphs: React.FunctionComponent<IGraphsProps> = (props) => {
                 <input id="input1" type="text" onChange={(e) => { setInputValue2(e.target.value) }} value={inputValue2} minLength={1} maxLength={5} />
                 <label htmlFor="input2">Child node</label>
                 <input id="input2" type="text" onChange={(e) => { setInputValue3(e.target.value) }} value={inputValue3} minLength={1} maxLength={5} />
-                <button onClick={createVertice}>Create link</button>
-                <button onClick={addVertice}>Cancel</button>
+                <button onClick={createEdge}>Create link</button>
+                <button onClick={addEdge}>Cancel</button>
             </>}
         </>
     );

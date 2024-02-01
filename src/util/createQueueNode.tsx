@@ -47,7 +47,7 @@ class Queue {
     }
 
 
-    enqueueNode(value: string, size: number) {
+    enqueueNode(value: string) {
         let posY, posX, height, width, id, id2;
         if (this.size > 0) {
             posY = this.head.posY;
