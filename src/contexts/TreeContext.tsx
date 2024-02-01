@@ -20,10 +20,6 @@ const TreeBSTContext = createContext<TreeBSTContextType>(defaultValue);
 const TreeBSTContextProvider: React.FC<TreeBSTContextProviderProps> = ({ children }) => {
   const [treeBST, setTreeBSTValue] = useState<TreeBST>(defaultValue.treeBST);
 
-  useEffect(() => {
-    console.log(treeBST)
-  }, [treeBST])
-
   return (
     <TreeBSTContext.Provider value={{ treeBST, setTreeBSTValue }}>
       {children}

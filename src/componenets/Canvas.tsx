@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { Stage, Layer} from 'react-konva';
+import { Stage, Layer } from 'react-konva';
 import { Outlet, useLocation } from "react-router-dom";
 import "../scss/_btnStyles.scss"
 import { CanvasWidthContext } from '../contexts/CanvaWidth';
 import StackRenderLogic from './StackRenderLogic';
 import QueueRenderLogic from './QueueRenderLogic';
+import TreeBSTRenderLogic from './TreeRenderLogic';
+import GraphRenderLogic from './GraphRenderLogic';
 
 interface ICanvasProps {
     navState: boolean;
@@ -54,38 +56,38 @@ const Canvas: React.FunctionComponent<ICanvasProps> = ({ navState, setNavBarStat
     }
 
     const zoomFuncIn = () => {
-        if (scale < 3) {
+        if (scale < 4) {
             setScale((prevState: number) => prevState * 1.1);
         }
     };
 
 
-    const handleWheel = (e: any) => {
-        e.evt.preventDefault();
+    // const handleWheel = (e: any) => {
+    //     e.evt.preventDefault();
 
-        // adjust the scale based on the wheel movement
-        const newScale = e.evt.deltaY > 0 ? scale * 1.1 : scale / 1.1;
+    //     // adjust the scale based on the wheel movement
+    //     const newScale = e.evt.deltaY > 0 ? scale * 1.1 : scale / 1.1;
 
-        // limit the scale to avoid extreme zoom levels
-        const limitedScale = Math.min(Math.max(newScale, 0.2), 2);
+    //     // limit the scale to avoid extreme zoom levels
+    //     const limitedScale = Math.min(Math.max(newScale, 0.2), 2);
 
-        setScale(limitedScale);
-    };
+    //     setScale(limitedScale);
+    // };
 
     // Attach wheel event listener on mount
-    React.useEffect(() => {
-        const stage = stageRef.current;
+    // React.useEffect(() => {
+    //     const stage = stageRef.current;
 
-        if (stage) {
-            stage.on('wheel', handleWheel);
-        }
+    //     if (stage) {
+    //         stage.on('wheel', handleWheel);
+    //     }
 
-        return () => {
-            if (stage) {
-                stage.off('wheel', handleWheel);
-            }
-        };
-    }, [handleWheel]);
+    //     return () => {
+    //         if (stage) {
+    //             stage.off('wheel', handleWheel);
+    //         }
+    //     };
+    // }, [handleWheel]);
 
 
 
@@ -102,12 +104,15 @@ const Canvas: React.FunctionComponent<ICanvasProps> = ({ navState, setNavBarStat
                 </span>
                 <div className='canvas' ref={canvasRef}>
                     {canvasWidth && (
-                        <Stage width={canvasWidth} height={500} ref={stageRef}>
+                        <Stage width={window.innerWidth} height={window.innerHeight} ref={stageRef}>
                             <Layer ref={layerRef}
                                 scaleX={scale} scaleY={scale}
                             >
                                 {(location.pathname === "/stacks") && <StackRenderLogic></StackRenderLogic>}
                                 {(location.pathname === "/queues") && <QueueRenderLogic></QueueRenderLogic>}
+                                {(location.pathname === "/trees") && <TreeBSTRenderLogic></TreeBSTRenderLogic>}
+                                {(location.pathname === "/graphs") && <GraphRenderLogic></GraphRenderLogic>}
+                                
                             </Layer>
                         </Stage>
                     )}

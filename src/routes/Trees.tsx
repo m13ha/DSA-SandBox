@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { CanvasWidthContext } from '../contexts/CanvaWidth';
 import useFocus from '../custom hooks/UseFocus';
 import { TreeBSTContext } from '../contexts/TreeContext';
 import { TreeBST } from '../util/createTreeNode';
@@ -10,7 +9,6 @@ interface ITreeProps {
 
 const Tree: React.FunctionComponent<ITreeProps> = (props) => {
     const { treeBST, setTreeBSTValue } = React.useContext(TreeBSTContext)
-    const { canvasWidth } = React.useContext(CanvasWidthContext)
     const [inputValue, setInputValue] = React.useState<number>(0)
     const [inputRef, setInputRefFocus] = useFocus()
     const [status, setStatus] = React.useState<any>(false)
