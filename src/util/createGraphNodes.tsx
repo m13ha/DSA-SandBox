@@ -55,7 +55,7 @@ class Graph {
         this.nodes = new Map();
         this.edge = new Map(); // Initial size
         this.size = 0;
-        this.axis = [window.innerWidth / 2, (window.innerHeight / 2)]
+        this.axis = [window.innerWidth, (window.innerHeight)]
         this.links = 0;
     }
 

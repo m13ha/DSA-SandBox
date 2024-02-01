@@ -43,4 +43,10 @@
         }
     }
 
+    @media (max-width: 600px) {
+        width: 100%; // Set width to 100% for full width on smaller screens
+        min-width: auto; // Reset min-width for better responsiveness
+        margin-bottom: 10px; // Add some spacing at the bottom for better separation
+    }
+
 }

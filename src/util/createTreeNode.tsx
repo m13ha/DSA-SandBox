@@ -37,7 +37,7 @@ class TreeBST {
 
   addNode(value: number) {
     if (!this.root) {
-      this.root = new TreeNode(window.innerWidth / 2, 100, value);
+      this.root = new TreeNode(window.innerWidth, 100, value);
     } else {
       this.addNodeRecursive(this.root, value, 1);
     }

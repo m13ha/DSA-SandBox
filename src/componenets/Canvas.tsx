@@ -21,7 +21,7 @@ const Canvas: React.FunctionComponent<ICanvasProps> = ({ navState, setNavBarStat
     const stageRef = React.useRef<any>(null);
     const layerRef = React.useRef<any>(null);
     const location = useLocation();
-    const [scale, setScale] = React.useState(1);
+    const [scale, setScale] = React.useState(0.4);
 
     React.useEffect(() => {
         window.addEventListener("resize", updateCanvasDimension);
@@ -62,34 +62,6 @@ const Canvas: React.FunctionComponent<ICanvasProps> = ({ navState, setNavBarStat
     };
 
 
-    // const handleWheel = (e: any) => {
-    //     e.evt.preventDefault();
-
-    //     // adjust the scale based on the wheel movement
-    //     const newScale = e.evt.deltaY > 0 ? scale * 1.1 : scale / 1.1;
-
-    //     // limit the scale to avoid extreme zoom levels
-    //     const limitedScale = Math.min(Math.max(newScale, 0.2), 2);
-
-    //     setScale(limitedScale);
-    // };
-
-    // Attach wheel event listener on mount
-    // React.useEffect(() => {
-    //     const stage = stageRef.current;
-
-    //     if (stage) {
-    //         stage.on('wheel', handleWheel);
-    //     }
-
-    //     return () => {
-    //         if (stage) {
-    //             stage.off('wheel', handleWheel);
-    //         }
-    //     };
-    // }, [handleWheel]);
-
-
 
     return (
         <>
@@ -104,7 +76,7 @@ const Canvas: React.FunctionComponent<ICanvasProps> = ({ navState, setNavBarStat
                 </span>
                 <div className='canvas' ref={canvasRef}>
                     {canvasWidth && (
-                        <Stage width={window.innerWidth} height={window.innerHeight} ref={stageRef}>
+                        <Stage width={window.innerWidth*2} height={window.innerHeight*1.5} ref={stageRef}>
                             <Layer ref={layerRef}
                                 scaleX={scale} scaleY={scale}
                             >

@@ -55,4 +55,13 @@
             border-bottom: 2px solid $dark;
         }
     }
+
+    
+
+    @media (max-width: 600px) {
+        position: absolute; // Change position to absolute for screens below 600px
+        width: 90%; // Set width to 100% for full width on smaller screens
+        background-color: $light;
+    }
+
 }

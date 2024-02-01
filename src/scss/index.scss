@@ -2,6 +2,7 @@
 @import "./navbar";
 @import "./canvas";
 @import "./sideBar";
+@import "./home";
 
 
 
@@ -15,7 +16,6 @@ html
     font-family: 'Ubuntu Mono', monospace;
     -ms-overflow-style: none;
     /* IE and Edge */
-    scrollbar-width: none;
 }
 
 

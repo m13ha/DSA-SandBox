@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <StackControls/>,
+        element: <App/>,
       },
       {
         path: "/stacks",
