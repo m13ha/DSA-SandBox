@@ -24,10 +24,9 @@ const LandingPage: React.FC = () => {
                 <section>
                     <h2>Why DSA Sandbox?</h2>
                     <p>
-                        DSA Sandbox is passionately crafted to be an interactive space where enthusiasts and learners can dive into the fascinating world of Data Structures and Algorithms (DSA). In an era where visualizing complex concepts is key, DSA Sandbox serves as a dynamic platform for comprehending and exploring various data structures in an intuitive manner.
-                    </p>
+                        DSA Sandbox is a humble initiative designed to provide a simple and interactive space for beginners to grasp the concepts of Data Structures and Algorithms (DSA). In this age where visualizing complex ideas is crucial, DSA Sandbox offers a straightforward platform to explore various data structures in an intuitive manner.                    </p>
                     <p>
-                        Whether you're a seasoned developer wanting to share your expertise or a learner with innovative ideas, your contributions are valuable. Feel free to explore the GitHub repository and contribute to the growth of DSA Sandbox. Together, we can build a comprehensive and inclusive resource for DSA education.
+                        As a solo developer behind this project, I've created DSA Sandbox to serve as a helpful tool for those looking to understand data structures through simple representations on a canvas. I welcome contributions from fellow developers to enhance and expand this resource. Feel free to explore the GitHub repository and join me in building a more comprehensive and inclusive educational tool for DSA. Together, we can make learning these concepts accessible to all.
                     </p>
                 </section>
 
