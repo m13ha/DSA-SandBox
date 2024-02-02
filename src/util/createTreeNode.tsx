@@ -94,7 +94,7 @@ class TreeBST {
         while (cur.left) {
           cur = cur.left;
         }
-        
+
         node.value = cur.value;
         node.right = this.deleteNodeRecursive(cur.value, node.right);
       }
@@ -103,7 +103,7 @@ class TreeBST {
     return node;
   }
 
-   searchNode(value: number) {
+  searchNode(value: number) {
     if (!this.root) {
       // do nothing
     } else {
@@ -111,14 +111,14 @@ class TreeBST {
     }
   }
 
-   searchNodeRecursive(value: number, node: TreeNode) {
+  searchNodeRecursive(value: number, node: TreeNode) {
     this.highlight(node, false)
     if (node.value === value) {
       this.highlight(node, "green");
       return false
-    }else if (node.left && node.value > value) {this.searchNodeRecursive(value, node.left)}
-    else if (node.right && node.value < value) {this.searchNodeRecursive(value, node.right)};
-    return true
+    } else if (node.left && node.value > value) { this.searchNodeRecursive(value, node.left) }
+    else if (node.right && node.value < value) { this.searchNodeRecursive(value, node.right) }
+    else return false
   }
 
   highlight(node: TreeNode, color: any) {
